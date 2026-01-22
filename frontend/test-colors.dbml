@@ -1,0 +1,42 @@
+// Test DBML file with colors for TableGroups and tables
+TableGroup E_Commerce [color: #1E69FD] {
+  Table orders [headercolor: #ff4444] {
+    id int [pk]
+    customer_id int
+    order_date timestamp
+    total decimal
+  }
+
+  Table customers {
+    id int [pk]
+    name varchar
+    email varchar
+    created_at timestamp
+  }
+}
+
+// Standalone table with color
+Table products [color: #00aa00] {
+  id int [pk]
+  name varchar
+  price decimal
+  category_id int
+}
+
+// Another group with different color
+TableGroup Inventory [color: #ffaa00] {
+  Table categories {
+    id int [pk]
+    name varchar
+  }
+
+  Table suppliers [headercolor: #9933cc] {
+    id int [pk]
+    name varchar
+    contact_info varchar
+  }
+}
+
+// Relationships
+Ref: orders.customer_id > customers.id
+Ref: products.category_id > categories.id

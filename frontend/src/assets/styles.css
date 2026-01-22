@@ -1,0 +1,102 @@
+/* Global theme variables and styles */
+
+:root {
+  /* Light theme variables */
+  --color-background: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-surface-secondary: #e9ecef;
+  --color-border: #dee2e6;
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-text-muted: #adb5bd;
+  --color-accent: #0d6efd;
+  --color-accent-hover: #0b5ed7;
+  --color-error: #dc3545;
+  --color-success: #198754;
+  --color-warning: #fd7e14;
+
+  /* Diagram specific */
+  --color-diagram-background: #fafafa;
+  --color-table-background: #ffffff;
+  --color-table-header-background: #f8f9fa;
+  --color-table-border: #e1e1e1;
+  --color-relationship-line: #666666;
+  --color-group-background: #f0f0f0;
+}
+
+:root.dark {
+  /* Dark theme variables */
+  --color-background: #1a1a1a;
+  --color-surface: #2d2d2d;
+  --color-surface-secondary: #3d3d3d;
+  --color-border: #404040;
+  --color-text: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-muted: #808080;
+  --color-accent: #4f9eff;
+  --color-accent-hover: #6baeff;
+  --color-error: #ff5555;
+  --color-success: #50fa7b;
+  --color-warning: #ffb86c;
+
+  /* Diagram specific */
+  --color-diagram-background: #1a1a1a;
+  --color-table-background: #2d2d2d;
+  --color-table-header-background: #3d3d3d;
+  --color-table-border: #404040;
+  --color-relationship-line: #808080;
+  --color-group-background: #404040;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html, body, #app {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Scrollbar styles for dark theme */
+:root.dark *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+:root.dark *::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+:root.dark *::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+:root.dark *::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Selection colors */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+:root.dark ::selection {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
